@@ -1,25 +1,38 @@
-import logo from './logo.svg';
-import './App.css';
+// import React from "react";
+// //import   './components/Images/logo1.png';
+// import Album from './components/Album';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+// function App(){
+//   return(
+//     <div>
+//       <Album />
+//     </div>
+//   );
+// }
+
+// export default App;
+
+import React from "react";
+import './App.css';
+import movies from './components/Data';
+import Albums from './components/Albums';
+
+function App(){
+  return(
+    
+
+    <div className="movie-albums">
+      {movies.map(movie =>
+        <Albums
+        musicDirector={movie.musicDirector}
+          //key={animal.name}
+          MovieName={movie.MovieName}
+          album={movie.album}
+        />
+      )}
+   
     </div>
   );
-}
 
+}
 export default App;
